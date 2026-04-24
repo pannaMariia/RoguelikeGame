@@ -1,5 +1,5 @@
 namespace RoguelikeGame.Core;
-
+using RoguelikeGame.Core.Enemies;
 public class GameObjectComposite
 {
     private List<IGameObject> _children = new();

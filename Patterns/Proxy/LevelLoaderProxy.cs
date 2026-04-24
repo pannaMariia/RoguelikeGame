@@ -1,4 +1,5 @@
 using RoguelikeGame.Core;
+using RoguelikeGame.Core.Enemies;
 using RoguelikeGame.Patterns.Builder;
 
 namespace RoguelikeGame.Patterns.Proxy;

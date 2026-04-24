@@ -1,4 +1,5 @@
 ﻿using RoguelikeGame.Core;
+using RoguelikeGame.Core.Enemies;
 using RoguelikeGame.Patterns.Proxy;
 using RoguelikeGame.Patterns.Observer;
 using System.Text;
@@ -78,7 +79,7 @@ class Program
     {
         Console.ForegroundColor = ConsoleColor.Cyan;
         Console.WriteLine("╔════════════════════════════════════════════════════════╗");
-        Console.WriteLine("║                    ROGUELIKE DUNGEON                    ║");
+        Console.WriteLine("║                    ROGUELIKE DUNGEON                   ║");
         Console.WriteLine("╚════════════════════════════════════════════════════════╝");
         Console.ResetColor();
         Console.WriteLine();
@@ -102,7 +103,6 @@ class Program
         // Сохраняем позицию курсора для отрисовки поля
         int startY = Console.CursorTop;
         
-        // Рисуем сетку 20x20
         for (int y = 0; y < 20; y++)
         {
             Console.Write("  "); // Отступ слева
