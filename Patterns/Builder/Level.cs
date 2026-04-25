@@ -5,6 +5,7 @@ namespace RoguelikeGame.Patterns.Builder;
 
 public class Level
 {
+    // списки что построим 
     public List<Wall> Walls { get; set; } = new();
     public Player? Player { get; set; }
     public Key? Key { get; set; }

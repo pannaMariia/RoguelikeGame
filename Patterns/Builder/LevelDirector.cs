@@ -7,6 +7,7 @@ public class LevelDirector
 {
     public void Construct(ILevelBuilder builder)
     {
+        // порядок
         builder.Reset();
         builder.BuildWalls();
         builder.BuildDoor();
