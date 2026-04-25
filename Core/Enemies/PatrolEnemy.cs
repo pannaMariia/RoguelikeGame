@@ -10,7 +10,7 @@ public class PatrolEnemy : Enemy
     public override void Update(GameManager gm)
     {
         _step++;
-        if (_step % 30 == 0)
+        if (_step % 5 == 0)
         {
             int newX = X + _direction;
             if (newX >= 0 && newX < 20)
@@ -24,5 +24,7 @@ public class PatrolEnemy : Enemy
             else
                 _direction *= -1;
         }
+        
+        CheckPlayerCollision(gm);
     }
 }

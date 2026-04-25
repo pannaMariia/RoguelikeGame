@@ -23,5 +23,7 @@ public class RandomEnemy : Enemy
                 Y = newY;
             }
         }
+        
+        CheckPlayerCollision(gm);
     }
 }

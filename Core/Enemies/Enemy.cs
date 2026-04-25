@@ -15,7 +15,12 @@ public abstract class Enemy : IGameObject
     }
     
     public abstract void Update(GameManager gm);
+    
+    protected void CheckPlayerCollision(GameManager gm)
+    {
+        if (gm.Player != null && gm.Player.X == X && gm.Player.Y == Y)
+        {
+            gm.GameLose();
+        }
+    }
 }
-
-
-

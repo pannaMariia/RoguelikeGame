@@ -1,6 +1,7 @@
 using RoguelikeGame.Core;
 using RoguelikeGame.Core.Enemies;
 using RoguelikeGame.Patterns.Builder;
+using RoguelikeGame.Patterns.Interpreter;
 
 namespace RoguelikeGame.Patterns.Proxy;
 
@@ -19,12 +20,26 @@ public class LevelLoaderProxy
     {
         if (!_isLoaded)
         {
-            Console.WriteLine("[Proxy] Loading level for first time...");
+            Console.WriteLine("[Proxy] Loading level...");
             
-            var builder = new SimpleLevelBuilder();
-            var director = new LevelDirector();
-            director.Construct(builder);
-            _cachedLevel = builder.GetResult();
+            // ★ ПЫТАЕМСЯ ЗАГРУЗИТЬ ИЗ ФАЙЛА ★
+            if (File.Exists(_levelFile))
+            {
+                Console.WriteLine($"[Proxy] Found file: {_levelFile}, parsing...");
+                var parser = new LevelParser();
+                _cachedLevel = parser.Parse(_levelFile);
+            }
+            
+            // Если файла нет или он пустой — используем строитель
+            if (_cachedLevel == null || (_cachedLevel.Walls.Count == 0 && _cachedLevel.Enemies.Count == 0))
+            {
+                Console.WriteLine("[Proxy] No valid level file, using builder...");
+                var builder = new SimpleLevelBuilder();
+                var director = new LevelDirector();
+                director.Construct(builder);
+                _cachedLevel = builder.GetResult();
+            }
+            
             _isLoaded = true;
         }
         else
