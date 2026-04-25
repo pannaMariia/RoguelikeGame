@@ -22,7 +22,6 @@ public class LevelLoaderProxy
         {
             Console.WriteLine("[Proxy] Loading level...");
             
-            // ★ ПЫТАЕМСЯ ЗАГРУЗИТЬ ИЗ ФАЙЛА ★
             if (File.Exists(_levelFile))
             {
                 Console.WriteLine($"[Proxy] Found file: {_levelFile}, parsing...");
@@ -30,7 +29,6 @@ public class LevelLoaderProxy
                 _cachedLevel = parser.Parse(_levelFile);
             }
             
-            // Если файла нет или он пустой — используем строитель
             if (_cachedLevel == null || (_cachedLevel.Walls.Count == 0 && _cachedLevel.Enemies.Count == 0))
             {
                 Console.WriteLine("[Proxy] No valid level file, using builder...");

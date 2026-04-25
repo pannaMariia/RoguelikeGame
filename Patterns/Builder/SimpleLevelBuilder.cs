@@ -11,7 +11,6 @@ public class SimpleLevelBuilder : ILevelBuilder
     
     public void BuildWalls()
     {
-        // Только внешние стены (уберем внутренний лабиринт для видимости)
         for (int i = 0; i < 20; i++)
         {
             _level.Walls.Add(new Wall(i, 0));

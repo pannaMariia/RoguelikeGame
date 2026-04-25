@@ -36,10 +36,10 @@ public class GameManager
         Console.Clear();
         Console.ForegroundColor = ConsoleColor.Red;
         Console.WriteLine("\n\n\n\n\n\n\n\n\n\n");
-        Console.WriteLine("╔════════════════════════════════════════╗");
-        Console.WriteLine("║               GAME OVER                ║");
-        Console.WriteLine("║      You were killed by an enemy!      ║");
-        Console.WriteLine("╚════════════════════════════════════════╝");
+
+        Console.WriteLine("               GAME OVER                ");
+        Console.WriteLine("      You were killed by an enemy!      ");
+
         Console.ResetColor();
         Console.WriteLine("\nPress any key to exit...");
         Console.ReadKey(true);
@@ -53,10 +53,10 @@ public class GameManager
         Console.Clear();
         Console.ForegroundColor = ConsoleColor.Green;
         Console.WriteLine("\n\n\n\n\n\n\n\n\n\n");
-        Console.WriteLine("╔════════════════════════════════════════╗");
-        Console.WriteLine("║                VICTORY!                ║");
-        Console.WriteLine("║      You escaped with the key!         ║");
-        Console.WriteLine("╚════════════════════════════════════════╝");
+
+        Console.WriteLine("                VICTORY!                ");
+        Console.WriteLine("      You escaped with the key!         ");
+
         Console.ResetColor();
         Console.WriteLine("\nPress any key to exit...");
         Console.ReadKey(true);

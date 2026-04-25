@@ -78,9 +78,9 @@ class Program
     static void DrawHeader()
     {
         Console.ForegroundColor = ConsoleColor.Cyan;
-        Console.WriteLine("╔════════════════════════════════════════════════════════╗");
-        Console.WriteLine("║                    ROGUELIKE DUNGEON                   ║");
-        Console.WriteLine("╚════════════════════════════════════════════════════════╝");
+
+        Console.WriteLine("                    ROGUELIKE DUNGEON                   ");
+
         Console.ResetColor();
         Console.WriteLine();
     }
@@ -88,7 +88,7 @@ class Program
     static void DrawStatus(GameManager gm)
     {
         Console.ForegroundColor = gm.HasKey ? ConsoleColor.Green : ConsoleColor.Red;
-        Console.WriteLine($"  KEY: {(gm.HasKey ? "✓ FOUND" : "✗ MISSING")}");
+        Console.WriteLine($"  KEY: {(gm.HasKey ? " FOUND" : " MISSING")}");
         Console.ResetColor();
         
         if (gm.Player != null)
@@ -100,12 +100,11 @@ class Program
     
     static void DrawGameField(GameManager gm)
     {
-        // Сохраняем позицию курсора для отрисовки поля
         int startY = Console.CursorTop;
         
         for (int y = 0; y < 20; y++)
         {
-            Console.Write("  "); // Отступ слева
+            Console.Write("  "); 
             for (int x = 0; x < 20; x++)
             {
                 var obj = gm.Root.GetAnyAt(x, y);
@@ -149,8 +148,7 @@ class Program
     static void DrawControls()
     {
         Console.WriteLine();
-        Console.WriteLine("  ┌─────────────────────────────────────────────────────┐");
-        Console.WriteLine("  │  CONTROLS:  W/A/S/D  or  ↑/←/↓/→      ESC = exit   │");
-        Console.WriteLine("  └─────────────────────────────────────────────────────┘");
+        Console.WriteLine("    CONTROLS:  W/A/S/D  or  ↑/←/↓/→      ESC = exit    ");
+
     }
 }
